@@ -1,5 +1,7 @@
 # Azure VM Infrastructure Project
 
+![image](diagram/diagram-export-11-8-2024-4_25_23-PM.png)
+
 This project uses Terraform to deploy a virtual machine infrastructure on Azure. It includes resources for Windows and Linux virtual machines, a Network Security Group (NSG), availability set, virtual machine scale set, Remote Desktop Services (RDS), and SSH access.
 
 ## Table of Contents
