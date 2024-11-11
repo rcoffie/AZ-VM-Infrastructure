@@ -25,6 +25,12 @@ resource "azurerm_network_interface" "windows_nic" {
   }
 }
 
+# Connect the security group to the network interface
+resource "azurerm_network_interface_security_group_association" "windows_nsg" {
+  network_interface_id      = azurerm_network_interface.linux_nic.id
+  network_security_group_id = azurerm_network_security_group.nsg.id
+}
+
 resource "azurerm_subnet" "linux_subnet" {
   name                 = "linux-subnet"
   resource_group_name  = azurerm_resource_group.main.name
@@ -43,4 +49,10 @@ resource "azurerm_network_interface" "linux_nic" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.linux_pip.id
   }
+}
+
+# Connect the security group to the network interface
+resource "azurerm_network_interface_security_group_association" "linux_nsg" {
+  network_interface_id      = azurerm_network_interface.linux_nic.id
+  network_security_group_id = azurerm_network_security_group.nsg.id
 }

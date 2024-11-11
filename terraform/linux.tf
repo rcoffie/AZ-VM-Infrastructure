@@ -1,5 +1,5 @@
 resource "azurerm_linux_virtual_machine" "linux_vm" {
-  name                = "linuc-vm"
+  name                = "linux-vm"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
   size                = "Standard_F2"
