@@ -5,6 +5,7 @@ resource "azurerm_windows_virtual_machine" "windows" {
   size                = "Standard_F2"
   admin_username      = "adminuser"
   admin_password      = var.admin_password
+  availability_set_id = azurerm_availability_set.app_set.id
   network_interface_ids = [
     azurerm_network_interface.windows_nic.id,
   ]
